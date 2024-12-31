@@ -25,3 +25,6 @@ my setting are
       option4 =("sim/flightmodel/position/groundspeed","m/s", "The ground speed of the aircraft",0),
       option5 =("sim/cockpit/autopilot/heading_mag", "°", "The heading to fly ",0)
 
+I used PyInstaller to build an .exe file
+
+Build using "python -m PyInstaller mainUdp.py"

@@ -154,7 +154,7 @@ def UDf():
   def send_json_udp_message(json_data, host='localhost', port=16536):
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
             s.sendto(json.dumps(json_data).encode('utf-8'), (host, port))
-  if(start==0):
+  if(start==0):   # only run once
     start = 1
     simapp_pro_start_messages = [
       {"func": "net", "msg": "ready"},

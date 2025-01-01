@@ -9,6 +9,8 @@ SinAppPro has to be running, then start Xplane
 
 you most likly need to change these settings in the "mainUdp.py" file,  they are specific to my machine
 
+they can be founf in X-plane network setting tyab.
+
   UDP_IP1 = "192.168.1.169"
   
   UDP_PORT1 = 49000

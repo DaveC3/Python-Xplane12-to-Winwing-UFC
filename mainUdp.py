@@ -33,7 +33,7 @@ def xplaneUDP():
   # List of datarefs to request. 
   datarefs = [
       # ( dataref, unit, description, num decimals to display in formatted output )
-      ("sim/cockpit/radios/com1_freq_hz","hz","Com1 frequency",0),
+      ("SRS/X-KeyPad/numeric_buffer_value","","Scratch Pad",0),
       ("sim/cockpit/radios/nav1_freq_hz", "hz", "Nav1 frequency",0),
       ("sim/cockpit2/gauges/indicators/radio_altimeter_height_ft_pilot","ft", "Radio-altimeter indicated height in feet, pilot-side	", 0), 
       ("sim/flightmodel/position/mag_psi", "°", "The real magnetic heading of the aircraft",0),
@@ -104,8 +104,12 @@ def xplaneUDP():
       # print()
       match key:
         case 0:
-          global comm1
-          comm1 = "{: .0f}".format(val[0]*10)
+            global Scrpad
+            Scrpad = val[0]
+            Scrpad = "{:.0f}".format(Scrpad)
+            #Scrpad = str(Scrpad).zfill(4)
+          # global comm1
+          # comm1 = "{: .0f}".format(val[0]*10)
         case 1:
           global nav1
           nav1 =  "{: .0f}".format(val[0]*10)
@@ -178,9 +182,9 @@ def UDf():
       "option5": str(opt5),
       "com1": "T",
       "com2": "6",
-      "scratchPadNumbers": str(nav1),
-      "scratchPadString1": "I",
-      "scratchPadString2": "L",
+      "scratchPadNumbers": str(Scrpad),
+      "scratchPadString1": "S",
+      "scratchPadString2": "P",
       "selectedWindows": ["1"]
       }
   ufcHelper = UFCSimAppProHelper(ufc_payload)

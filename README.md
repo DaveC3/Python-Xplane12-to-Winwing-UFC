@@ -11,7 +11,7 @@ you most likly need to change these settings in the "mainUdp.py" file,  they are
 
 they can be founf in X-plane network setting tab.
 
-  UDP_IP1 = "192.168.1.169"
+  UDP_IP1 = "192.168.1.169"  or "127.0.0.1"
   
   UDP_PORT1 = 49000
   
